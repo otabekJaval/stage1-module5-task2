@@ -1,8 +1,21 @@
 package com.epam.mjc;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class InterfaceCreator {
 
-    public Operation<Integer> divideBy(Integer divider) {
-        throw new UnsupportedOperationException("You should implement this method.");
+    public Operation divideBy(Integer divider) {
+
+        return arg -> {
+
+            List<Integer> integers = new ArrayList<>();
+
+            for (Object o : arg) {
+                integers.add((Integer) o / divider);
+            }
+            return integers;
+        };
+
     }
 }
